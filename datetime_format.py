@@ -12,7 +12,7 @@ HMS_RE = r"^(?P<aH>\d{1,2})(?P<bs>:?)(?P<cM>\d{2})(?:(?P<ds>:?)(?P<eS>\d{2}))?(?
 
 def guess_datetime_format(values: list[str], n=100, return_dict=False):
     di = {}
-    for val in values:
+    for val in values[:n]:
         if val is None:
             continue
         fmts = datetime_formats(val)
